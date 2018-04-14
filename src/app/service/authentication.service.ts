@@ -16,7 +16,7 @@ export class AuthenticationService {
 
     get isLoggedIn() {
         return this.loggedIn.asObservable(); // {2}
-    }
+    }    
 
     login(email: string, password: string) {
         return this.http.post<any>(
@@ -30,12 +30,29 @@ export class AuthenticationService {
             }
         ).map(res => {
             // login successful if there's a jwt token in the response
+            console.log(res)
             if(res.message !== 'error'){
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 this.loggedIn.next(true);
                 localStorage.setItem('currentUser', JSON.stringify(res.message));
             }
             return res;
+        });
+    }
+
+    resetPassword(param) {
+        return this.http.post<any>(
+            'http://192.168.0.27:8080/changepwd', 
+            {oldpwd: param.old, newpwd: param.new}, 
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                }
+            }
+        ).map((res) => {
+            // login successful if there's a jwt token in the response
+            return res
         });
     }
 

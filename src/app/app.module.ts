@@ -12,7 +12,9 @@ import { AlertComponent } from './shared/alert/alert.component';
 import { LogInComponent } from './component/login/login.component'
 import { RegisterComponent } from './component/register/register.component'
 import { ChatComponent } from './component/chat/chat.component'
+import { ResetPasswordComponent } from './component/reset/reset.component'
 import { AlertService, AuthenticationService, AuthGuard } from './service/index'
+import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,16 @@ import { AlertService, AuthenticationService, AuthGuard } from './service/index'
     LogInComponent,
     RegisterComponent,
     AlertComponent,
-    ChatComponent
+    ChatComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PasswordStrengthBarModule
   ],
   exports: [
     SideBarComponent,
