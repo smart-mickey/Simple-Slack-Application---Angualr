@@ -1,0 +1,8 @@
+<div *ngIf="isLoggedIn$ | async" class="side-bar-container">
+  <div>
+      <button type="button" class="transButton" (click)="onToggleSideBar()"><i class="material-icons">sort</i></button>
+      <span>Simple Slack</span>
+  </div>  
+  <button type="button" class="customButton" (click)="onLogout()">Log Out</button>
+</div>
+

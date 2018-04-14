@@ -1,0 +1,29 @@
+.side-bar {
+    width: 300px;
+    background: #444;
+    height: 100%;
+    padding: 20px;
+    transition: all 150ms linear;
+    -webkit-transition: all 150ms linear;
+    -moz-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    .user-name {
+        font-size: 40px;
+        color: white;
+        padding-bottom: 80px;
+        border-bottom: 1px solid gray
+    }
+    button {
+        border-bottom: 1px solid gray;
+        .button-text {
+            text-align: left
+        }
+    }    
+}
+
+.side-bar-hiden {
+    width: 0px;
+    padding: 0px;
+    overflow: hidden;
+}

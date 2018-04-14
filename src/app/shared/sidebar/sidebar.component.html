@@ -1,0 +1,7 @@
+<div *ngIf="isLoggedIn$ | async" class="side-bar" [ngClass]="{'side-bar-hiden': isHide == true }">
+  <p class="user-name">{{myName}}</p>
+  <button type="button" class="transButton full-width" (click)="onSelectChannel('general')">
+    <p class="button-text">General</p>
+  </button>
+</div>
+
